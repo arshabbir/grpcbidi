@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package protopb;
+option go_package="protopb";
+
+
+message Request {
+    int64 num = 1;
+}
+
+message Response {
+
+    int64 maxstream = 1;
+}
+
+
+service MaxServiceBidi {
+
+    rpc MaxBidi(stream Request) returns(stream Response){};
+
+}
