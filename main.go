@@ -11,6 +11,7 @@ func main() {
 
 	var wg sync.WaitGroup
 
+	wg.Add(2)
 	go server.Server.Start(&wg)
 
 	go client.Client.Start(&wg)
